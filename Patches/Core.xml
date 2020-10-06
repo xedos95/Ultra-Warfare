@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName="Orbital_CombatSupplier"]/stockGenerators</xpath>
+    <value>
+      <li Class="StockGenerator_Category">
+        <categoryDef>UWRangedWeapon</categoryDef>
+        <thingDefCountRange>1~1</thingDefCountRange>
+        <countRange>1~1</countRange>
+      </li>
+    </value>
+  </Operation>
+  
+     <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName="Orbital_CombatSupplier"]/stockGenerators</xpath>
+    <value>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>blueprint_Unleashed</thingDef>
+        <countRange>1~1</countRange>
+      </li>
+    </value>
+  </Operation>
+  
+   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName="Orbital_BulkGoods"]/stockGenerators</xpath>
+    <value>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Graphite</thingDef>
+        <countRange>70~170</countRange>
+      </li>
+    </value>
+  </Operation>
+  
+   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName="Orbital_Exotic"]/stockGenerators</xpath>
+    <value>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Graphite</thingDef>
+        <countRange>90~400</countRange>
+      </li>
+    </value>
+  </Operation>
+  
+   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName="Caravan_Outlander_Exotic"]/stockGenerators</xpath>
+    <value>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Graphite</thingDef>
+        <countRange>70~170</countRange>
+      </li>
+    </value>
+  </Operation>
+  
+	<Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName="Base_Outlander_Standard"]/stockGenerators</xpath>
+    <value>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Graphite</thingDef>
+        <countRange>70~170</countRange>
+      </li>
+    </value>
+  </Operation>  
+  
+   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName="Orbital_Exotic"]/stockGenerators</xpath>
+    <value>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>blueprint_paragon</thingDef>
+        <countRange>1~1</countRange>
+      </li>
+    </value>
+  </Operation>
+  
+   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName="Caravan_Outlander_Exotic"]/stockGenerators</xpath>
+    <value>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>blueprint_paragon</thingDef>
+        <countRange>1~1</countRange>
+      </li>
+    </value>
+  </Operation>
+  
+</Patch>

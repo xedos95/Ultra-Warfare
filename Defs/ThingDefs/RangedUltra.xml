@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+ <ThingCategoryDef>
+    <defName>UWRangedWeapon</defName>
+    <label>ultra warfare weapons</label>
+    <parent>WeaponsRanged</parent>
+  </ThingCategoryDef>
+
+  <ThingDef Name="BaseUWGun" Abstract="True" ParentName="BaseWeapon">
+    <techLevel>Ultra</techLevel>
+    <smeltable>true</smeltable>
+    <tradeability>Buyable</tradeability>
+    <thingCategories>
+      <li>UWRangedWeapon</li>
+    </thingCategories>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+    <statBases>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+    </comps>
+    <thingSetMakerTags Inherit="False">
+      <li>RewardStandardLowFreq</li>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+  </ThingDef>
+  
+    <!-- ====================== Paragon  ===================== -->
+
+  
+  <ThingDef ParentName="BaseUWGun">
+    <defName>UW_SniperRifle</defName>
+    <label>si-sniper rifle "Paragon"</label>
+    <description>Paragon is the pinnacle of humanity's engineering when it comes to sniper rifles. Equipped with micro-onboard computer that gives this weapon a semi-intelligence that allows it to fire with inhuman accuracy.Complex ultra-tech firing mechanics built in; allow a fire rate beyond anything that any other known sniperrifle can offer.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Paragon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.1</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <Mass>4</Mass>
+	  <MarketValue>1460</MarketValue>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.95</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_UW_SniperRifle</defaultProjectile>
+        <warmupTime>3</warmupTime>
+        <range>44.9</range>
+        <soundCast>Shot_SniperRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+	<comps>
+	   <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon"></li>
+	</comps>
+    <equippedAngleOffset>45</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <weaponTags Inherit="False">
+      <li>SniperRifle</li>
+    </weaponTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_UW_SniperRifle</defName>
+    <label>si-sniper rifle bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>25</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+  
+   <RecipeDef>
+    <defName>UW_SniperRifle_Recipe</defName>
+    <label>Make si-sniper rifle "Paragon"</label>
+    <description>Make si-sniper rifle "Paragon"</description>
+    <workAmount>145000</workAmount>
+    <jobString>Making si-sniper rifle "Paragon"</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smith</effectWorking>
+    <soundWorking>Recipe_Smith</soundWorking>
+	<unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+    <workSkill>Crafting</workSkill>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>ComponentSpacer</li>
+        <li>ComponentUltra</li>
+		<li>blueprint_paragon</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <recipeUsers>
+      <li>UWBench</li>
+    </recipeUsers>
+    <researchPrerequisite>UltraFabrication</researchPrerequisite>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>75</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentUltra</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>blueprint_paragon</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <UW_SniperRifle>1</UW_SniperRifle>
+	  <blueprint_paragon>1</blueprint_paragon>
+    </products>
+    <skillRequirements>
+      <Crafting>12</Crafting>
+      <Intellectual>7</Intellectual>
+    </skillRequirements>
+  </RecipeDef>
+  
+  <!-- ====================== Unleashed  ===================== -->
+  
+    <ThingDef ParentName="MoteBase">
+    <defName>UnleashedMote</defName>
+    <graphicData>
+    <texPath>Things/Mote/UnleashedMote</texPath>
+    <shaderType>MoteGlow</shaderType>
+	<drawSize>4.2</drawSize>	  
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>	
+    <mote>
+      <fadeInTime>0</fadeInTime>
+      <solidTime>0.07</solidTime>
+      <fadeOutTime>0.1</fadeOutTime>
+      <growthRate>4.40</growthRate>	  
+    </mote>
+	<seeThroughFog>true</seeThroughFog>
+  </ThingDef>    
+  
+    <DamageDef Name="Gauss">
+    <defName>UnleashedDamage</defName>
+    <label>charge blaster shot</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <isExplosive>true</isExplosive>
+    <deathMessage>{0} has died in an explosion.</deathMessage>
+    <hediff>Shredded</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Electric</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <minDamageToFragment>15</minDamageToFragment>
+    <defaultDamage>35</defaultDamage>
+    <defaultStoppingPower>0.5</defaultStoppingPower>
+    <defaultArmorPenetration>0</defaultArmorPenetration>
+    <buildingDamageFactor>4</buildingDamageFactor>
+    <plantDamageFactor>4</plantDamageFactor>
+    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+    <explosionCellMote>UnleashedMote</explosionCellMote>
+    <soundExplosion>Explosion_EMP</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+  
+  
+   <ThingDef ParentName="BaseUWGun">
+    <defName>UW_Unleashed</defName>
+    <label>charge blaster "Unleashed"</label>
+    <description>An Ultra-Tech charged-blaster, unlike classic pulse-charge technology that charges each shot with unstable energy, this weapon release a big powerful blast of pure charged energy. Fires a single shot at rather short range, and has a rather long recharge time; but makes up for it more than enough just by the merit of it lethality. Developed by Glitterworldy Military Forces, in situations that require extreme firepower.</description>
+    <graphicData>
+      <texPath>Things/Weapons/ChargedFusionRifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.1</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <Mass>6</Mass>
+	  <MarketValue>1720</MarketValue>
+      <AccuracyTouch>0.25</AccuracyTouch>
+      <AccuracyShort>0.65</AccuracyShort>
+      <AccuracyMedium>0.55</AccuracyMedium>
+      <AccuracyLong>0.35</AccuracyLong>
+      <RangedWeapon_Cooldown>2.6</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_UW_Unleashed</defaultProjectile>
+        <warmupTime>3</warmupTime>
+        <range>22.5</range>
+		<forcedMissRadius>0.001</forcedMissRadius>
+		<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+        <soundCast>Shot_SniperRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+		<targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <equippedAngleOffset>45</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+   <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_UW_Unleashed</defName>
+    <label>charge blaster shot</label>
+	<thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/ChargeBlaster</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>UnleashedDamage</damageDef>
+      <damageAmountBase>35</damageAmountBase>
+	  <armorPenetrationBase>0.14</armorPenetrationBase>
+      <stoppingPower>5</stoppingPower>
+      <speed>45</speed>
+	  <explosionRadius>4</explosionRadius>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+    </projectile>
+  </ThingDef>
+  
+    <RecipeDef>
+    <defName>UW_Unleashed_Recipe</defName>
+    <label>Make charge blaster "Unleashed"</label>
+    <description>Make charge blaster "Unleashed"</description>
+    <workAmount>145000</workAmount>
+    <jobString>Making charge blaster "Unleashed"</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smith</effectWorking>
+    <soundWorking>Recipe_Smith</soundWorking>
+	<unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+    <workSkill>Crafting</workSkill>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+		<li>Uranium</li>
+        <li>ComponentSpacer</li>
+        <li>ComponentUltra</li>
+		<li>blueprint_Unleashed</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <recipeUsers>
+      <li>UWBench</li>
+    </recipeUsers>
+    <researchPrerequisite>UltraFabrication</researchPrerequisite>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>80</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>35</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentUltra</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>blueprint_Unleashed</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <UW_Unleashed>1</UW_Unleashed>
+	  <blueprint_Unleashed>1</blueprint_Unleashed>
+    </products>
+    <skillRequirements>
+      <Crafting>12</Crafting>
+      <Intellectual>7</Intellectual>
+    </skillRequirements>
+  </RecipeDef>
+
+	
+</Defs>

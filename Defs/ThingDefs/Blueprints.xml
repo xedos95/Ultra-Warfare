@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingCategoryDef>
+		<defName>BlueprintsCategory</defName>
+		<label>Blueprints</label>
+		<parent>Items</parent>
+	</ThingCategoryDef>
+
+
+	<ThingDef Name="BlueprintBase" ParentName="ResourceBase" Abstract="True">
+	    <techLevel>Ultra</techLevel>
+		<thingCategories>
+			<li>BlueprintsCategory</li>
+		</thingCategories>
+		<graphicData>
+			<texPath>Things/Item/Blueprint</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+		</graphicData>
+		<stackLimit>1</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+		<MaxHitPoints>70</MaxHitPoints>
+		<MarketValue>1560</MarketValue>
+		<Mass>0.1</Mass>
+		<Flammability>1</Flammability>
+		<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+	<tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+	</ThingDef>
+  
+    <ThingDef ParentName="BlueprintBase">
+    <defName>blueprint_paragon</defName>
+    <label>blueprint: paragon</label>
+    <description>Paragon is the pinnacle of humanity's engineering when it comes to sniper rifles. Equipped with micro-onboard computer that gives this weapon a semi-intelligence that allows it to fire with inhuman accuracy.Complex ultra-tech firing mechanics built in; allow a fire rate beyond anything that any other known sniperrifle can offer.</description>
+    <soundDrop>Standard_Drop</soundDrop>
+  </ThingDef>
+  
+   <ThingDef ParentName="BlueprintBase">
+    <defName>blueprint_Unleashed</defName>
+    <label>blueprint: unleashed</label>
+    <description>An Ultra-Tech charged-blaster, unlike classic pulse-charge technology that charges each shot with unstable energy, this weapon release a big powerful blast of pure charged energy. Fires a single shot at rather short range, and has a rather long recharge time; but makes up for it more than enough just by the merit of it lethality. Developed by Glitterworldy Military Forces, in situations that require extreme firepower.</description>
+    <soundDrop>Standard_Drop</soundDrop>
+	<thingSetMakerTags>
+		<li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+  
+  </Defs>
